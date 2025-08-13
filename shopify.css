@@ -1,0 +1,35 @@
+
+  .navbar {
+  height: 149px;
+
+justify-content:space-around;
+  display: flex;
+  align-items: center;
+  padding:px;
+}
+
+.nav-logo{
+  background-image: url("Pink and Black Modern Initials Logo Design.png"); 
+  background-size: cover;
+  height: 170px;
+  width: 170px;
+  align-items: center;
+   
+  position: absolute;
+  top: px;   /* Distance from top */
+  left: 10px;  /* Distance from left */
+}
+.product-image{
+  height: 50px;
+  width: 50px;
+}
+.timer{
+background-color: #c6f67d;
+
+  
+  
+}
+
+section{
+  background-color:#c6f67d ;
+}

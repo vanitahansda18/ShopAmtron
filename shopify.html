@@ -1,0 +1,230 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopAmtron Store</title>
+
+<link rel="stylesheet" href="shopify.css">
+<style>
+
+   
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+    }
+    header {
+        background: linear-gradient(to right, #a2d45e, #d4f09c);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        border-bottom: 2px solid #ccc;
+    }
+    header img {
+        height: 60px;
+    }
+    h1 {
+        margin-left: 15px;
+        font-size: 1.8rem;
+        color: #333;
+    }
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+    .product-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+        transform: scale(1.03);
+    }
+    .product-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    .product-card h3 {
+        font-size: 1.1rem;
+        margin: 5px 0;
+        color: #222;
+    }
+    .product-card p {
+        color: #555;
+        font-size: 0.9rem;
+    }
+    .price {
+        font-weight: bold;
+        color: #0a5b50;
+        margin: 5px 0;
+    }
+    button {
+        background: #0a5b50;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #09463f;
+    }
+</style>
+</head>
+<body>
+    
+<header>
+    <div class="navbar">
+      <div class="nav-logo border">
+        <div class="logo"></div>
+      </div>
+
+</header>
+
+
+
+        
+
+        
+          
+        
+
+ <div class="timer" aria-live="polite">
+          <div class="pill"><div id="d">00</div><small>Days</small></div>
+          <div class="pill"><div id="h">00</div><small>Hours</small></div>
+          <div class="pill"><div id="m">00</div><small>Mins</small></div>
+          <div class="pill"><div id="s">00</div><small>Secs</small></div>
+        </div>
+
+
+<section class="products">
+    <div class="product-card">
+        <img src="m (2).webp" alt="Magnetic Wireless Charger">
+        <h3>Magnetic Wireless Charger</h3>
+        <p>Fast charging with sleek magnetic design.</p>
+        <div class="price">₹1,299</div>
+        <button>Add to Cart</button>
+        <button>Buy now</button>
+    </div>
+
+  
+
+</div>
+
+
+
+    <div class="product-card">
+        <img src="padman.webp" alt="heating Pad">
+        <h3>Hymasa Heating pad </h3>
+        <p>Comfortable design for daily use Period Pain relief.</p>
+        <div class="price">₹499</div>
+        <button>Add to Cart</button>
+        <button>Buy now</button>
+    </div>
+
+    
+</div>
+
+    <div class="product-card">
+        <img src="s (3).webp" alt="Gardening Tool">
+        <h3>Gardening pruner</h3>
+        <p>Durable and perfect for home gardening,heavy roll cutter.</p>
+        <div class="price">₹699</div>
+        <button>Add to Cart</button>
+        <button>Nuy now</button>
+    </div>
+
+   
+  
+
+</div>
+
+
+        <div class="product-card">
+        <img src="air bag.webp" alt="Air compressor pump">
+        <h3>Air compressor pump</h3>
+        <p>Air pump for car and bike.</p>
+        <div class="price">₹1,199</div>
+        <button>Add to Cart</button>
+        <button>Buy now</button>
+   
+</div> 
+    
+    
+    <div class="product-card">
+        <img src="t (3).webp" alt=" mortin">
+        <h3>Mylta Hub Lamp</h3>
+        <p>Electric shock plug mosquito killer lamp suction.</p>
+        <div class="price">₹226</div>
+        <button>Add to Cart</button>
+        <button>Buy now</button>
+   
+</div>
+
+</section>
+<footer>
+    <div class="container">
+      © <span id="year"></span> ShopAmtron • GST‑inclusive prices • <a href="#">Privacy</a> • <a href="#">Refunds</a>
+    </div>
+  </footer>
+
+   
+
+  <script>
+    // Swap gallery image
+    function swap(el){ document.getElementById('mainImg').src = el.src; }
+
+    // Countdown timer (set to 72 hours from first visit)
+    (function(){
+      const key='shopamtron_deadline';
+      let end = localStorage.getItem(key);
+      if(!end){ end = Date.now() + 72*60*60*1000; localStorage.setItem(key,end); }
+      function tick(){
+        const t = Math.max(0, end - Date.now());
+        const d = Math.floor(t/86400000);
+        const h = Math.floor((t%86400000)/3600000);
+        const m = Math.floor((t%3600000)/60000);
+        const s = Math.floor((t%60000)/1000);
+        document.getElementById('d').textContent = String(d).padStart(2,'0');
+        document.getElementById('h').textContent = String(h).padStart(2,'0');
+        document.getElementById('m').textContent = String(m).padStart(2,'0');
+        document.getElementById('s').textContent = String(s).padStart(2,'0');
+      }
+      tick(); setInterval(tick,1000);
+    })();
+
+    // Buy Now (Shopify: replace with form posting to /cart or use data-product-id)
+    function buyNow(){
+      alert('Buy Now clicked. In Shopify, hook this to the product form or /cart/add.js with the variant ID.');
+    }
+
+    // Cross‑sell add
+    function addRelated(handle){
+      alert('Added related product: ' + handle + '. In Shopify, call /cart/add.js with the related variant ID.');
+    }
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+
+
+
+</body>
+</html>
+
+
